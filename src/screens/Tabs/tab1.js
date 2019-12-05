@@ -1,27 +1,56 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, List, ListItem, Thumbnail, Text, Left, Body, Right, Button } from 'native-base';
+import {Alert,View,ActivityIndicator,Text} from 'react-native';
+import { Container, Header, Content, List, ListItem, Thumbnail, Left, Body, Right, Button } from 'native-base';
+import { getArticles } from '../../service/news';
+import DataItem from '../../component/dataItem';
 export default class ListThumbnailExample extends Component {
+   
+    constructor(props){
+        super(props);
+        this.state={
+            isLoading: true,
+            data: null
+        }
+    }
+
+    componentDidMount(){
+        getArticles().then(data =>{
+            this.setState({
+                isLoading: false,
+                data: data
+            });
+
+        },error=>{
+            Alert.alert('Error','something went wrong');
+        }
+        )
+    }
   render() {
+      console.log(this.state.data);
+      let view =this.state.isLoading?(
+          <View>
+              <ActivityIndicator animating={this.state.isLoading}/>
+              <Text>please wait.....</Text>
+          </View>
+      ):(
+        <List
+        dataArray={this.state.data}
+        renderRow={(item) =>{
+            return <DataItem data={item}/>
+        }
+      }
+
+
+        />
+
+      )
     return (
       <Container>
        
         <Content>
-          <List>
-            <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: 'https://greendestinations.org/wp-content/uploads/2019/05/avatar-exemple.jpg' }} />
-              </Left>
-              <Body>
-                <Text>Sankhadeep</Text>
-                <Text note numberOfLines={2}>Its time to build a difference . .Its time to build a difference . .Its time to build a difference . .</Text>
-              </Body>
-              <Right>
-                <Button transparent>
-                  <Text>View</Text>
-                </Button>
-              </Right>
-            </ListItem>
-          </List>
+         
+             {view}
+          
         </Content>
       </Container>
     );

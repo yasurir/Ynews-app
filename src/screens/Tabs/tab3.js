@@ -1,26 +1,71 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-
-// create a component
-class tab3 extends Component {
-	render() {
-		return (
-			<View style={styles.container}>
-				<Text>tab3</Text>
-			</View>
-		);
-	}
+import { Container, Header, Content, List, ListItem, Thumbnail, Text, Left, Body, Right, Button } from 'native-base';
+export default class ListThumbnailExample extends Component {
+  render() {
+    return (
+      <Container>
+       
+        <Content>
+          <List>
+            <ListItem thumbnail>
+              <Left>
+                <Thumbnail square source={{ uri: 'https://greendestinations.org/wp-content/uploads/2019/05/avatar-exemple.jpg' }} />
+              </Left>
+              <Body>
+                <Text>news 1</Text>
+                <Text note numberOfLines={2}>Its time to build a difference . .Its time to build a difference . .Its time to build a difference . .</Text>
+              </Body>
+              <Right>
+                <Button transparent>
+                  <Text>View</Text>
+                </Button>
+              </Right>
+            </ListItem>
+            <ListItem thumbnail>
+              <Left>
+                <Thumbnail square source={{ uri: 'https://greendestinations.org/wp-content/uploads/2019/05/avatar-exemple.jpg' }} />
+              </Left>
+              <Body>
+                <Text>news 1</Text>
+                <Text note numberOfLines={2}>Its time to build a difference . .Its time to build a difference . .Its time to build a difference . .</Text>
+              </Body>
+              <Right>
+                <Button transparent>
+                  <Text>View</Text>
+                </Button>
+              </Right>
+            </ListItem>
+            <ListItem thumbnail>
+              <Left>
+                <Thumbnail square source={{ uri: 'https://greendestinations.org/wp-content/uploads/2019/05/avatar-exemple.jpg' }} />
+              </Left>
+              <Body>
+                <Text>news 1</Text>
+                <Text note numberOfLines={2}>Its time to build a difference . .Its time to build a difference . .Its time to build a difference . .</Text>
+              </Body>
+              <Right>
+                <Button transparent>
+                  <Text>View</Text>
+                </Button>
+              </Right>
+            </ListItem>
+            <ListItem thumbnail>
+              <Left>
+                <Thumbnail square source={{ uri: 'https://greendestinations.org/wp-content/uploads/2019/05/avatar-exemple.jpg' }} />
+              </Left>
+              <Body>
+                <Text>news 1</Text>
+                <Text note numberOfLines={2}>Its time to build a difference . .Its time to build a difference . .Its time to build a difference . .</Text>
+              </Body>
+              <Right>
+                <Button transparent>
+                  <Text>View</Text>
+                </Button>
+              </Right>
+            </ListItem>
+          </List>
+        </Content>
+      </Container>
+    );
+  }
 }
-
-// define your styles
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-		backgroundColor: '#2c3e50',
-	},
-});
-
-//make this component available to the app
-export default tab3;
