@@ -4,6 +4,7 @@ import { View, StyleSheet,Dimensions,Modal,Share } from 'react-native';
 import { Container, Header, Content, List, ListItem, Thumbnail, Text, Left, Body, Right, Button, Icon, Title } from 'native-base';
 import { WebView } from 'react-native-webview';
 // create a component
+const WebViewHeight =Dimensions.get('window').height - 56;
 class ModalComponent extends Component {
     constructor(props){
         super(props);
@@ -20,6 +21,7 @@ class ModalComponent extends Component {
     render() {
         const {showModal,articleData} = this.props;
         const {url}=articleData;
+        if(url!=undefined){
         return (
          <Modal
          animationType="slide"
@@ -41,9 +43,10 @@ class ModalComponent extends Component {
                          </Button>
                      </Right>
                  </Header>
-                 <Content>
+                 <Content contentContainerStyle={{height:WebViewHeight}}>
                 <WebView source={{uri:url}} style={{flex:1}}
-                     onError={this.handleClose} startInLoading
+                     onError={this.handleClose} startInLoadingState
+                     scalesPageToFit
                      
                      />
  
@@ -54,6 +57,9 @@ class ModalComponent extends Component {
              
          </Modal>
         );
+        }else {
+            return null;
+        }
     }
 }
 
