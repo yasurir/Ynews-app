@@ -16,13 +16,13 @@ export default class TabsExample extends Component {
           <Right />
         </Header>
         <Tabs>
-          <Tab tabStyle={{backgroundColor:'#3366cc'}} activeTabStyle={{backgroundColor:'#193366'}} heading="Entertainment">
+          <Tab tabStyle={{backgroundColor:'#3366cc'}} activeTabStyle={{backgroundColor:'#193366'}} heading="General">
             <Tab1 />
           </Tab>
-          <Tab tabStyle={{backgroundColor:'#3366cc'}} activeTabStyle={{backgroundColor:'#193366'}} heading="Sports">
+          <Tab tabStyle={{backgroundColor:'#3366cc'}} activeTabStyle={{backgroundColor:'#193366'}} heading="Entertainment">
             <Tab2 />
           </Tab>
-          <Tab tabStyle={{backgroundColor:'#3366cc'}} activeTabStyle={{backgroundColor:'#193366'}} heading="whether">
+          <Tab tabStyle={{backgroundColor:'#3366cc'}} activeTabStyle={{backgroundColor:'#193366'}} heading="Technology">
             <Tab3 />
           </Tab>
         </Tabs>

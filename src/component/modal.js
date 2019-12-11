@@ -15,9 +15,34 @@ class ModalComponent extends Component {
         return this.props.onClose();
 
     }
-    handleShare=()=>{
-      
+    handleShare = async () => {
+        //const {url, title} = this.props.articleData;
+        const result = await Share.share({
+            message:
+              'Shared via YNews App',
+          });
+        //message = `${title}\n\nRead More @${url}\n\nShared via RN News App`;
+     /*    return Share.share(
+            {title, message, url: message},
+            {dialogTitle:`Share ${title}`}
+        ); */
+        
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+      }
+    
+  
+
     }
+
+
+    
     render() {
         const {showModal,articleData} = this.props;
         const {url}=articleData;

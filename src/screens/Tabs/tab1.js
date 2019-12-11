@@ -4,7 +4,7 @@ import { Container, Header, Content, List, ListItem, Thumbnail, Left, Body, Righ
 import { getArticles } from '../../service/news';
 import DataItem from '../../component/dataItem';
 import Modal from '../../component/modal';
-export default class ListThumbnailExample extends Component {
+export default class Tab1 extends Component {
    
     constructor(props) {
         super(props);
