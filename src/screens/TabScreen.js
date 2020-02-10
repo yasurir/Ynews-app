@@ -8,7 +8,7 @@ export default class TabsExample extends Component {
   render() {
     return (
       <Container>
-        <Header style={{backgroundColor:'#E0E0E0'}}hasTabs>
+        <Header style={{backgroundColor:'#000099'}}hasTabs>
         <Left/>
           <Body>
             <Title>YNews App</Title>
@@ -16,13 +16,13 @@ export default class TabsExample extends Component {
           <Right />
         </Header>
         <Tabs>
-          <Tab tabStyle={{backgroundColor:'#E0E0E0'}} activeTabStyle={{backgroundColor:'#000000'}} heading="General">
+          <Tab tabStyle={{backgroundColor:'#000099'}} activeTabStyle={{backgroundColor:'#000000'}} heading="General">
             <Tab1 />
           </Tab>
-          <Tab tabStyle={{backgroundColor:'#E0E0E0'}} activeTabStyle={{backgroundColor:'#000000'}} heading="Entertainment">
+          <Tab tabStyle={{backgroundColor:'#000099'}} activeTabStyle={{backgroundColor:'#000000'}} heading="Entertainment">
             <Tab2 />
           </Tab>
-          <Tab tabStyle={{backgroundColor:'#E0E0E0'}} activeTabStyle={{backgroundColor:'#000000'}} heading="Technology">
+          <Tab tabStyle={{backgroundColor:'#000099'}} activeTabStyle={{backgroundColor:'#000000'}} heading="Technology">
             <Tab3 />
           </Tab>
         </Tabs>
